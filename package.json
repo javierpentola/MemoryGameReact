@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "eslint-plugin-react": "^7.34.4"
+  },
+  "dependencies": {
+    "nes.css": "^2.3.0"
+  }
+}
