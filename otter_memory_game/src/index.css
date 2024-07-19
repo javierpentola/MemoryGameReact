@@ -1,3 +1,6 @@
+@import url('https://unpkg.com/nes.css/css/nes.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: #000;
@@ -58,10 +61,19 @@ body {
 }
 
 .card img {
-  width: 110%; /* Aumenta un poco el tamaño de las imágenes */
-  height: 110%; /* Aumenta un poco el tamaño de las imágenes */
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   position: absolute;
   top: -5%;
   left: -5%;
+}
+
+/* Additional styles for NES.css */
+.nes-container {
+  font-family: 'Press Start 2P', 'Press Start', sans-serif;
+}
+
+.nes-btn {
+  font-family: 'Press Start 2P', 'Press Start', sans-serif;
 }

@@ -1,0 +1,25 @@
+@import url('https://unpkg.com/nes.css/css/nes.min.css');
+@font-face {
+  font-family: 'PublicPixel';
+  src: url('./fonts/PublicPixel.ttf') format('truetype');
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .menu-container h2 {
+    color: #209cee; /* color azul NES */
+    margin-bottom: 20px;
+  }
+  
+  .menu-container .nes-btn {
+    margin: 10px 0;
+    font-family: 'Press Start 2P', cursive; /* Asegura que la fuente sea la correcta */
+    font-size: 1em;
+  }
+  
