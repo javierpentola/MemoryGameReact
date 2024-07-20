@@ -1,0 +1,45 @@
+.trophies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #333; /* Fondo oscuro */
+  }
+  
+  .trophies-container ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centrado horizontal */
+  }
+  
+  .trophy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0; /* Aumenta el margen para más espacio lateral */
+    padding: 15px;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .trophy label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .trophy .nes-checkbox {
+    margin-right: 10px;
+  }
+  
+  .nes-btn.is-primary {
+    margin-top: 20px;
+  }
+  

@@ -1,25 +1,62 @@
-@import url('https://unpkg.com/nes.css/css/nes.min.css');
-@font-face {
-  font-family: 'PublicPixel';
-  src: url('./fonts/PublicPixel.ttf') format('truetype');
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  border: 2px solid #00bfff; /* Añadido borde */
+  background-color: #333; /* Asegurar fondo oscuro */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .menu-container h2 {
-    color: #209cee; /* color azul NES */
-    margin-bottom: 20px;
-  }
-  
-  .menu-container .nes-btn {
-    margin: 10px 0;
-    font-family: 'Press Start 2P', cursive; /* Asegura que la fuente sea la correcta */
-    font-size: 1em;
-  }
-  
+h2 {
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+
+.nes-btn {
+  margin: 10px 0;
+  width: 300px;
+  height: 50px; /* Altura aumentada de los botones */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px; /* Ajustar el ancho para consistencia */
+}
+
+.toggle-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Añadir espacio entre los botones */
+}
+
+.nes-btn.is-primary {
+  background-color: #00bfff; /* Azul */
+  color: white;
+}
+
+.nes-btn.is-success {
+  background-color: #32cd32; /* Verde */
+  color: white;
+}
+
+.nes-btn.is-warning {
+  background-color: #ffd700; /* Amarillo */
+  color: black;
+}
+
+.nes-btn.is-error {
+  background-color: #ff6347; /* Rojo */
+  color: white;
+}

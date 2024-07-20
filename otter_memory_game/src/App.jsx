@@ -3,6 +3,7 @@ import DifficultySelector from './components/DifficultySelector';
 import StatusBar from './components/StatusBar';
 import GameBoard from './components/GameBoard';
 import Menu from './components/Menu';
+import Trophies from './components/Trophies';
 import { easyCards, mediumCards, hardCards, shuffle } from './components/cardsData';
 import './App.css';
 
@@ -16,6 +17,7 @@ const App = () => {
   const [timer, setTimer] = useState(null);
   const [matchedCards, setMatchedCards] = useState([]);
   const [lives, setLives] = useState(5);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const startGame = (additionalCards = []) => {
     const difficulty = document.getElementById('difficulty').value;
@@ -109,9 +111,11 @@ const App = () => {
   };
 
   const generateAdditionalCards = (numberOfCards) => {
+    const existingCards = [...easyCards, ...mediumCards, ...hardCards];
     const newCards = [];
     for (let i = 0; i < numberOfCards / 2; i++) {
-      const card = { name: `newCard${i}`, img: `path_to_image_${i}.jpg` };
+      const randomCard = existingCards[Math.floor(Math.random() * existingCards.length)];
+      const card = { name: `newCard${i}`, img: randomCard.img };
       newCards.push(card, { ...card });
     }
     return shuffle(newCards);
@@ -123,15 +127,26 @@ const App = () => {
     }
   }, [gameMode]);
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="app-container">
+    <div className={`app-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <div className="toggle-buttons">
+        <button className="nes-btn is-primary" onClick={toggleDarkMode}>
+          {isDarkMode ? 'Modo Claro' : 'Modo Oscuro'}
+        </button>
+      </div>
       {gameMode === '' ? (
         <Menu setGameMode={setGameMode} />
+      ) : gameMode === 'trofeos' ? (
+        <Trophies setGameMode={setGameMode} />
       ) : (
         <>
-          <DifficultySelector startGame={startGame} />
+          <DifficultySelector startGame={startGame} setGameMode={setGameMode} />
           <StatusBar time={time} score={score} lives={lives} gameMode={gameMode} />
-          <GameBoard cards={cards} onCardClick={onCardClick} flippedCards={flippedCards} matchedCards={matchedCards} />
+          <GameBoard cards={cards} onCardClick={onCardClick} flippedCards={flippedCards} matchedCards={matchedCards} setGameMode={setGameMode} />
         </>
       )}
     </div>

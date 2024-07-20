@@ -77,3 +77,14 @@ body {
 .nes-btn {
   font-family: 'Press Start 2P', 'Press Start', sans-serif;
 }
+
+/* Resto de tus estilos existentes */
+
+.share-buttons {
+  margin-top: 20px;
+}
+
+.nes-btn {
+  margin: 5px;
+}
+
